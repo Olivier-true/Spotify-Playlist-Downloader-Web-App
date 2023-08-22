@@ -55,7 +55,7 @@ def index():
         # Execute bash command asynchronously
         
         output = b""
-        process = subprocess.Popen([binary, '-m', 'spotdl', f'{url}', '--output', './download/'], stdout=subprocess.PIPE)
+        process = subprocess.Popen([binary, '-m', 'spotdl', f'{url}', '--output', './downloads/'], stdout=subprocess.PIPE)
         Thread(target=readStdout, args=(process,)).start()
         return "OK"
     return """
@@ -189,7 +189,7 @@ def output2():
 
 @app.route('/download')
 def download():
-    path = "./download/"
+    path = "./downloads/"
     if len(os.listdir(path)) == 0:
         if "download.zip" in os.listdir("."):
             print("send old zip")
@@ -231,7 +231,7 @@ def download():
         for root, dirs, files in os.walk(path):
             for file in files:
                 ziph.write(os.path.join(root, file), os.path.relpath(os.path.join(root, file), os.path.join(path, '..')))
-        os.system("rm ./download/*.mp3")
+        os.system("rm ./downloads/*.mp3")
         return send_file("download.zip", as_attachment=True)
 
 if __name__ == '__main__':
