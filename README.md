@@ -72,3 +72,5 @@ The creators of this project disclaim any responsibility for how this code is us
 This project should not be used for commercial purposes, copyright infringement, or any activity contrary to the policies of the platforms involved.
 
 Please use this project responsibly and respect the rights of content creators and platform providers.
+
+<p align="center"><img src="https://ipipip-gh.0xsql.repl.co/spotify-downloader/views.png" alt="Visitors"></a></p>
